@@ -1,0 +1,16 @@
+---
+const { title, excerpt, imageUrl, category, date } = Astro.props;
+---
+
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-200 border border-gray-200 dark:border-gray-700">
+  <img src={imageUrl} alt={title} class="w-full h-48 object-cover" />
+
+  <div class="p-5">
+    <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-2">
+      <span class="bg-red-100 text-red-700 px-2 py-0.5 rounded">{category}</span>
+      <span>{date}</span>
+    </div>
+    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">{title}</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300">{excerpt}</p>
+  </div>
+</article>

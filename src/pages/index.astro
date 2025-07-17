@@ -17,7 +17,7 @@
 // Layout should be responsive: 2-column (main + sidebar) on desktop, stacked on mobile.
 // Import all components from /src/components
 import Layout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.jsx';
+import Hero from '../components/Hero.astro';
 import PostGrid from '../components/PostGrid.astro';
 import FearIndexPreview from '../components/FearIndexPreview.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
@@ -33,7 +33,7 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
         
         <!-- Main content area -->
         <div class="md:col-span-2 space-y-8">
-          <Hero />
+          <Hero /> <!-- This is now the full image hero version -->
           <PostGrid />
         </div>
 
