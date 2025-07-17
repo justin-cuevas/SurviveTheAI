@@ -1,39 +1,100 @@
-🎯 PROJECT SETUP: Survive the AI (Astro + React + Tailwind)
-Create the full folder and config structure for a fear-driven content + product site using:
+# 🎯 PROJECT SETUP: Survive the AI (Astro + React + Tailwind)
 
-Astro (core site generator)
+This is a fear-driven content and product site. The design system is modeled on:  
+https://demos.wrappixel.com/premium-admin-templates/angular/blog-angular/main/
 
-Tailwind CSS (utility styling)
+---
 
-React (for interactive components like quizzes)
+## ⚒️ Tech Stack
 
-🗂️ Structure:
-/public: static assets
+- **Astro** (site generator)
+- **Tailwind CSS** (styling)
+- **React** (for interactive components like quizzes)
 
-/src/components: React and Astro UI blocks (Hero, CTA, QuizBox, etc.)
+---
 
-/src/layouts: Layout files with <slot /> for content injection
+## 🗂️ Folder Structure
 
-/src/pages: Main routes (index.astro, blog, drops, quiz)
+/public → Static assets (images, fonts)
+/src/components → Astro + React components (Hero, Navbar, PostCard, QuizStep)
+/src/layouts → Layouts using <slot /> (BaseLayout, BlogLayout)
+/src/pages → Routes (index.astro, /quiz, /drops, /fear-papers)
+/src/content → Markdown content (Fear Papers, Kits)
+/src/styles → Tailwind CSS files
+/src/data → Static JSON or JS config (fear-index.json, quiz-questions.json)
 
-/src/content: Markdown content (Fear Papers, product kits)
+yaml
+Copy
+Edit
 
-/src/styles: Tailwind config + global styles
+---
 
-/src/data: Static JSON or JS files (Fear Index categories, quiz logic)
+## ⚙️ Core Config Files
 
-⚙️ Core Config Files:
-astro.config.mjs: Astro project config
+- `astro.config.mjs` → Astro setup  
+- `tailwind.config.cjs` → Theme, font, spacing, colors  
+- `tsconfig.json` → Type safety  
+- `package.json` → Scripts, dependencies
 
-tailwind.config.cjs: Tailwind setup with content paths
+---
 
-tsconfig.json: TypeScript settings
+## 🧠 Component Design Notes for Copilot
 
-package.json: Scripts + deps
+### `Navbar.astro`
+- White background, border bottom, shadow
+- Logo left: "Survive the AI"
+- Links right: Home, Quiz, Drops, Fear Papers
 
-💡 Plugins:
-Add Tailwind CSS
+### `Hero.astro`
+- Full-bleed background image (Unsplash AI/future)
+- Overlay text block with title, subtitle, CTA
+- Transparent dark layer behind text
 
-Add React support for interactive embeds
+### `PostCard.astro`
+- Top image
+- Category badge (red or blue)
+- Date tag (top right overlay)
+- Title, excerpt, "Read More →" link
+- Uniform width and height
+- Hover elevation and smooth transitions
 
-Scaffold this cleanly with placeholder files where needed.
+### `PostGrid.astro`
+- 2–3 column responsive layout
+- Pull from static `posts` array or dynamic content
+
+### `FearIndexPreview.astro`
+- Sidebar box with category links
+- White background, padding, border, rounded
+
+### `NewsletterSignup.astro`
+- Email input + button
+- White card style
+- Text above input: “Sign up for updates”
+
+### `Footer.astro`
+- Left: “© Survive the AI”
+- Right: links to Home, Privacy, Terms
+- Light background, small font, center aligned on mobile
+
+---
+
+## 🧩 Quiz Logic (WIP)
+
+- Each quiz question = 1 JSON object in `/src/data/quiz-questions.json`
+- React component `QuizBox.jsx` will:
+  - Load questions
+  - Track answers
+  - Calculate fear index score
+- Results page = `/quiz/results`
+
+---
+
+## 🧠 Copilot Prompt Guidelines
+
+Use this file as the source of truth. When generating new components:
+
+```js
+// Match the Wrappixel demo layout
+// Use tailwind spacing, shadow, rounded-lg, clean typography
+// Import props like { title, excerpt, imageUrl }
+// Ensure layout matches other cards

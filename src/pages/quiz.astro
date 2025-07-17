@@ -1,4 +1,15 @@
 ---
-// Quiz page stub
+import Layout from '../layouts/BaseLayout.astro';
+import QuizBox from '../components/QuizBox.jsx';
 ---
-<h1>Quiz</h1>
+
+<Layout>
+  <section class="max-w-2xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-6">AI Survival Quiz</h1>
+    <p class="text-gray-600 mb-6">
+      Answer these quick questions to assess your exposure to AI disruption. Your results will help guide you to survival tools and next steps.
+    </p>
+
+    <QuizBox />
+  </section>
+</Layout>
