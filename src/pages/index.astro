@@ -1,0 +1,50 @@
+---
+// Recreate the layout and styling of https://demos.wrappixel.com/premium-admin-templates/angular/blog-angular/main/
+// The layout has:
+// - A fixed-width, 3-column grid (main + sidebar)
+// - Light background with subtle shadows and borders
+// - A clean card grid for posts (3 across max)
+// - Sidebar includes a section with categories and one for newsletter signup
+// - Responsive behavior: stack on small screens, grid on desktop
+
+
+// Using Astro and Tailwind, create a homepage layout wrapped in BaseLayout. 
+// Include the following components:
+// 1. <Hero /> — Hero section with title, subtitle, and CTA button
+// 2. <PostGrid /> — Grid of blog or product teaser cards
+// 3. <FearIndexPreview /> — Sidebar list of fear categories
+// 4. <NewsletterSignup /> — Sidebar email opt-in form
+// Layout should be responsive: 2-column (main + sidebar) on desktop, stacked on mobile.
+// Import all components from /src/components
+import Layout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.jsx';
+import PostGrid from '../components/PostGrid.astro';
+import FearIndexPreview from '../components/FearIndexPreview.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+---
+<div class="bg-yellow-300 text-black p-4 text-center text-xl font-bold">
+  Tailwind test: If you see this yellow box, Tailwind is working.
+</div>
+
+<Layout>
+  <main class="bg-gray-200 dark:bg-gray-900 py-10">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800 p-10 shadow-xl rounded-xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Main content area -->
+        <div class="md:col-span-2 space-y-8">
+          <Hero />
+          <PostGrid />
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <FearIndexPreview />
+          <NewsletterSignup />
+        </aside>
+
+      </div>
+    </div>
+  </main>
+</Layout>
+
