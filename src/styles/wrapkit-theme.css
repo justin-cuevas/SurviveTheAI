@@ -1,0 +1,12 @@
+/* Wrapkit-inspired theme for Survive the AI */
+:root {
+  --primary: #2962ff;
+  --accent: #ff1744;
+  --bg-light: #f5f7fa;
+  --card-bg: #fff;
+  --sidebar-bg: #f0f4f8;
+  --text-main: #212121;
+  --text-muted: #757575;
+  --radius: 1rem;
+  --shadow: 0 2px 8px rgba(44,62,80,0.08);
+}

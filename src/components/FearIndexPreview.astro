@@ -1,9 +1,17 @@
-<section class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-sm">
-  <h3 class="text-md font-bold mb-3">Fear Index</h3>
-  <ul class="space-y-2 text-sm">
-    <li><a href="#" class="text-blue-600 hover:underline">AI Takeover</a></li>
-    <li><a href="#" class="text-blue-600 hover:underline">Job Loss</a></li>
-    <li><a href="#" class="text-blue-600 hover:underline">Privacy Erosion</a></li>
-    <li><a href="#" class="text-blue-600 hover:underline">Bias & Ethics</a></li>
+---
+// FearIndexPreview component: sidebar list of fear categories
+const categories = [
+  'AI Takeover',
+  'Job Loss',
+  'Privacy Erosion',
+  'Bias & Ethics',
+];
+---
+<div class="bg-card-bg rounded-[var(--radius)] shadow-[var(--shadow)] p-4">
+  <h3 class="font-bold mb-2 text-[var(--primary)] font-sans">Fear Index</h3>
+  <ul class="space-y-1">
+    {categories.map(cat => (
+      <li class="text-text-muted font-sans">{cat}</li>
+    ))}
   </ul>
-</section>
+</div>

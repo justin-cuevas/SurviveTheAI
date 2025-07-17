@@ -2,20 +2,20 @@
 ---
 
 <section
-  class="relative w-full h-[500px] bg-cover bg-center bg-no-repeat text-white"
+  class="relative w-full h-[500px] bg-cover bg-center bg-no-repeat text-white rounded-[var(--radius)] shadow-[var(--shadow)]"
   style="background-image: url('https://source.unsplash.com/1600x900/?ai,future');"
 >
-  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-[var(--radius)]"></div>
 
   <div class="relative z-10 flex items-center justify-center h-full">
     <div class="text-center px-6 max-w-2xl">
-      <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">Survive the AI Collapse</h1>
-      <p class="text-lg mb-6 text-gray-200 drop-shadow-md">
+      <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg font-sans">Survive the AI Collapse</h1>
+      <p class="text-lg mb-6 text-gray-200 drop-shadow-md font-sans">
         Tools, tactics, and truth for the age of disruption.
       </p>
       <a
         href="/quiz"
-        class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full transition duration-200 shadow-lg"
+        class="inline-block bg-[var(--accent)] hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full transition duration-200 shadow-lg"
       >
         Take the AI Survival Quiz
       </a>
