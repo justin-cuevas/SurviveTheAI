@@ -1,61 +1,37 @@
 ---
-import PostCard from './PostCard.astro';
+import Layout from '../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
-const posts = [
-  {
-    title: "Your Resume Is Worthless in 2026",
-    excerpt: "Credentialism is collapsing. Here's what recruiters actually look for now.",
-    imageUrl: "https://source.unsplash.com/400x250/?resume,ai",
-    category: "Job Loss",
-    date: "July 2025",
-  },
-  {
-    title: "How to AI-Proof Your Kid",
-    excerpt: "A survival guide for parents navigating education collapse and chatbot addiction.",
-    imageUrl: "https://source.unsplash.com/400x250/?parenting,ai",
-    category: "Parenting",
-    date: "July 2025",
-  },
-  {
-    title: "Gig Collapse Bundle: What's Inside",
-    excerpt: "Delivery drivers, freelancers, and side hustlers — here's what's coming.",
-    imageUrl: "https://source.unsplash.com/400x250/?gig,work",
-    category: "Gig Economy",
-    date: "July 2025",
-  },
-  {
-    title: "AI Fear Paper #1",
-    excerpt: "Exploring the biggest AI fears in 2026.",
-    imageUrl: "https://source.unsplash.com/400x250/?fear,ai",
-    category: "Fear Papers",
-    date: "July 2025",
-  },
-  {
-    title: "Product Kit: Survive the Disruption",
-    excerpt: "Tools and tactics to help you adapt to rapid change.",
-    imageUrl: "https://source.unsplash.com/400x250/?tools,ai",
-    category: "Product Kits",
-    date: "July 2025",
-  },
-  {
-    title: "The Truth About Automation",
-    excerpt: "What jobs are really safe? What skills matter most?",
-    imageUrl: "https://source.unsplash.com/400x250/?automation,work",
-    category: "Automation",
-    date: "July 2025",
-  },
-];
+type Post = CollectionEntry<'posts'>;
+const posts: Post[] = await getCollection('posts');
+posts.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime());
+console.log(posts);
 ---
 
-<div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-  {posts.map((post) => (
-    <div class="bg-white rounded-[var(--radius)] shadow-[var(--shadow)] overflow-hidden flex flex-col">
-      <img src={post.imageUrl} alt={post.title} class="w-full h-40 object-cover" />
-      <div class="p-5 flex-1 flex flex-col">
-        <h2 class="text-lg font-bold mb-2 text-blue-700 font-sans">{post.title}</h2>
-        <p class="text-gray-600 font-sans flex-1">{post.excerpt}</p>
-        <a href="#" class="mt-4 inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 font-semibold px-4 py-2 rounded transition">Read More</a>
-      </div>
-    </div>
-  ))}
+<div class="mb-2">
+	{posts.slice(0, 1).map((post) => (
+		<a href={`/posts/${post.slug}`}>
+			<div class="bg-black rounded-[var(--radius)] shadow-[var(--shadow)] overflow-hidden flex flex-col">
+				<img src={`/src/content/images/${post.data.image}`} alt={post.data.image} class="w-full h-80 object-cover" />
+				<div class="p-5 flex-1 flex flex-col">
+					<h2 class="text-lg font-bold mb-2 text-white font-sans">{post.data.title}</h2>
+					<p class="text-white font-sans flex-1">{post.data.excerpt}</p>
+				</div>
+			</div>
+		</a>
+	))}
+</div>
+
+<div class="grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+	{posts.slice(1, 5).map((post) => (
+		<a href={`/posts/${post.slug}`}>
+			<div class="bg-black rounded-[var(--radius)] shadow-[var(--shadow)] overflow-hidden flex flex-col">
+				<img src={`/src/content/images/${post.data.image}`} alt={post.data.image} class="w-full h-40 object-cover" />
+				<div class="p-5 flex-1 flex flex-col">
+					<h2 class="text-lg font-bold mb-2 text-white font-sans">{post.data.title}</h2>
+					<p class="text-white font-sans flex-1">{post.data.excerpt}</p>
+				</div>
+			</div>
+		</a>
+	))}
 </div>

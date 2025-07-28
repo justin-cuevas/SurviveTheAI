@@ -6,7 +6,15 @@ module.exports = {
     './src/styles/**/*.{css,scss}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: '#ed8311',
+          light: '#f9a94a',
+          dark: '#b25e00',
+        },
+      },
+    },
   },
   plugins: [],
 };
