@@ -1,7 +1,7 @@
 ---
 filename: "aifears.md"
 title: "Exploring the Biggest AI Fears in 2026"
-pubDate: 2025-07-28
+pubDate: 2025-07-29T17:52:00.000Z
 author: "Justin Cuevas"
 description: "What keeps experts, governments, and citizens up at night as AI accelerates into 2026?"
 excerpt: "From job loss to deepfakes to runaway intelligence — these are the AI fears shaping the next era."

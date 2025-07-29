@@ -17,10 +17,11 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 const chunkSize = 5;
 
 const posts: Post[] = await getCollection('posts');
-posts.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime());
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const groupedItems = chunkArray(posts, chunkSize);
 
 console.log(posts);
+console.log(groupedItems);
 ---
 
 <Layout>

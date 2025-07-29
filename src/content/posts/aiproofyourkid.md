@@ -1,7 +1,7 @@
 ---
 filename: "aiproofyourkid.md"
 title: "How to AI-Proof Your Kid"
-pubDate: 2025-07-28
+pubDate: 2025-07-29T18:52:00.000Z
 author: "Justin Cuevas"
 description: "A practical guide for parents who want to prepare their children for a world dominated by artificial intelligence."
 excerpt: "If your child’s future job can be automated, you need to read this."

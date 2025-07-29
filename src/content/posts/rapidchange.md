@@ -1,7 +1,7 @@
 ---
 filename: "rapidchange.md"
 title: "How to Adapt to Rapid Change in the Age of AI"
-pubDate: 2025-07-28
+pubDate: 2025-07-29T16:52:00.000Z
 author: "Justin Cuevas"
 description: "From careers to creativity, learn how to thrive in a world where everything changes faster than ever."
 excerpt: "AI isn’t just changing the world — it’s speeding it up. Here's how to stay relevant and resilient."

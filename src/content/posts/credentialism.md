@@ -1,7 +1,7 @@
 ---
 filename: "credentialism.md"
 title: "Credentialism is Collapsing: Here's What Recruiters Actually Look For Now"
-pubDate: 2025-07-28T19:52:00.000Z
+pubDate: 2025-07-29T14:52:00.000Z
 author: "Justin Cuevas"
 description: "Degrees used to be the golden ticket. Not anymore. Discover what employers truly value in a post-credential era."
 excerpt: "Degrees are losing power. Recruiters now value what you can do over what you claim on paper."

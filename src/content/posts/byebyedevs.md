@@ -2,7 +2,7 @@
 filename: "byebyedevs.md"
 title: Are Programmers Becoming Obsolete in the Age of AI?
 description: As AI tools become more powerful, the traditional role of a programmer is evolving — and potentially disappearing.
-pubDate: 2025-07-29
+pubDate: 2025-07-26T13:52:00.000Z
 author: Alex Morgan
 tags: ["AI", "future of work", "software engineering", "automation"]
 image: ai-takes-over-code.jpg

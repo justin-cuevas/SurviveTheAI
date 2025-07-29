@@ -1,7 +1,7 @@
 ---
 filename: "riseofgigeconomy.md"
 title: "The Rise of the Gig Economy"
-pubDate: 2025-07-28T18:52:00.000Z
+pubDate: 2025-07-29T15:52:00.000Z
 author: "Justin Cuevas"
 description: "How freelancing, contract work, and on-demand labor are reshaping the modern workforce."
 excerpt: "Delivery drivers, freelancers, and side hustlers — here's what's coming."
