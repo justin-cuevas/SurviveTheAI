@@ -3,25 +3,40 @@ import Layout from '../layouts/BaseLayout.astro';
 import PostGrid from '../components/PostGrid.astro';
 import FearIndexPreview from '../components/FearIndexPreview.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { getCollection } from 'astro:content';
+import type { Post } from '../data/Posts';
+
+function chunkArray<T>(arr: T[], size: number): T[][] {
+  const result: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
+}
+
+const chunkSize = 5;
+
+const posts: Post[] = await getCollection('posts');
+posts.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime());
+const groupedItems = chunkArray(posts, chunkSize);
+
+console.log(posts);
 ---
 
 <Layout>
-  <main class="bg-white py-20">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white">
-        
-        <!-- Main feed -->
-        <div>
-          <PostGrid />
-        </div>
+  	<main class="bg-white py-20">
+		<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="bg-white">
+				<div>
+					<PostGrid groupedItems={groupedItems}/>
+				</div>
 
-        <!-- Sidebar
-        <aside class="space-y-6">
-          <FearIndexPreview />
-          <NewsletterSignup />
-        </aside> -->
-
-      </div>
-    </div>
-  </main>
+				<!-- Sidebar
+				<aside class="space-y-6">
+				<FearIndexPreview />
+				<NewsletterSignup />
+				</aside> -->
+			</div>
+		</div>
+	</main>
 </Layout>
